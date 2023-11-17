@@ -24,26 +24,45 @@ $(document).ready(function (){
         e.stopPropagation();
     })
 
+    function createTicket(row) {
+        let main = $("#main");
+
+        let ticket = `<div class="ticket">
+                        <table>
+                            <tbody>
+                                    <tr><td class="heading">task:</td><td>${row[0]}</td></tr>
+                                    <tr><td class="heading">description:</td><td>${row[1]}</td></tr>
+                                    <tr><td class="heading">input:</td><td>${row[2]}</td></tr>
+                                    <tr><td class="heading">output:</td><td>${row[3]}</td></tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>`;
+        main.append(ticket);
+    }
+    function displayDataAsTickets(data) {
+        for (var i = 1; i < data.length; i++) {
+            createTicket(data[i]);
+        }
+    }
+    
 
 
 
     function connectToSheets() {
-        let url = "https://script.google.com/macros/s/AKfycbyT2cKROIY01zwmOTe2DVmjnWvupnI-23MUC2fB2peVJxlexUaQd8m-lOhgHPisnyjQzg/exec";
+        let url = "https://script.google.com/macros/s/AKfycbySPnxqQ4bT4Vjzxzp_it78SZ17I35PV_nZLtSVpF-0ZJuZcnthLFcVI4RL-ddvCPWlzw/exec";
         document.getElementById('form').action = url;
 
         jQuery.ajax({
             crossDomain: true,
             url: url,
             method: "GET",
-            dataType: "jsonp",
-            success: function(data) {loadData(data) }
-
+            dataType: "json",
+            success: function(resp) {
+                console.log(resp);
+                displayDataAsTickets(resp.data)
+            }
             });
-            
-             // log the returned data
-              function loadData(e) {
-              console.log(e);
-              }
     }
 
     connectToSheets();

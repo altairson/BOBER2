@@ -43,11 +43,13 @@ main {
     height: 500px;
     margin: 30px;
     cursor: pointer;
+    padding: 20px;
 }
 
 .ticket:hover {
     box-shadow: 1px 1px 20px 2px #33ff0067;
     scale: 1.03;
+    
 }
 
 .header {
@@ -71,6 +73,23 @@ main {
     justify-content: right;
 }
 
+.ticket table {
+    width: 100%;
+    height: 100%;
+}
+
+.ticket table td {
+    padding: 2px;
+    display: flex;
+    color: #888;
+}
+
+.heading {
+    border-bottom: 1px solid gray;
+    font-weight: bolder;
+    color: #222 !important;
+    justify-content: center;
+}
 
 .tabs li {
     list-style: none;

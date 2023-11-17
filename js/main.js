@@ -44,6 +44,7 @@ $(document).ready(function (){
         for (var i = 1; i < data.length; i++) {
             createTicket(data[i]);
         }
+        $(".loading").addClass('hidden');
     }
     
 

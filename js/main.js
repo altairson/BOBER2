@@ -28,7 +28,7 @@ $(document).ready(function (){
 
 
     function connectToSheets() {
-        let url = "https://script.google.com/macros/s/AKfycbzO-p-_SNXoBCchyieTxBCQnTH-5JgIxO6Ix9hZ-vIIkQKOrwIoHM-zQzRCLUaqMmaeNg/exec";
+        let url = "https://script.google.com/macros/s/AKfycbyT2cKROIY01zwmOTe2DVmjnWvupnI-23MUC2fB2peVJxlexUaQd8m-lOhgHPisnyjQzg/exec";
         document.getElementById('form').action = url;
 
         jQuery.ajax({

@@ -31,13 +31,19 @@ $(document).ready(function (){
         let url = "https://script.google.com/macros/s/AKfycbzO-p-_SNXoBCchyieTxBCQnTH-5JgIxO6Ix9hZ-vIIkQKOrwIoHM-zQzRCLUaqMmaeNg/exec";
         document.getElementById('form').action = url;
 
-        fetch(`${url}`)
-            .then((response) => response.json())
-            .then(({ data }) => {
-                console.log(data);
-                datalist = data;
-            })
-            .catch((error) => console.log('!!!!!!!!', error));
+        jQuery.ajax({
+            crossDomain: true,
+            url: url,
+            method: "GET",
+            dataType: "jsonp",
+            success: function(data) {loadData(data) }
+
+            });
+            
+             // log the returned data
+              function loadData(e) {
+              console.log(e);
+              }
     }
 
     connectToSheets();

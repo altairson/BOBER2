@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://apis.google.com/js/api.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <main id="main">
+        <div class="focused hidden">
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore deserunt corrupti qui reiciendis totam facere, repellat consectetur! Voluptatum, deserunt itaque inventore alias cupiditate quod dicta nobis sit laborum pariatur.</p>
+            </div>
+            <div class="tools">
+                <div class="inout">
+                    <div class="input"></div> 
+                    <div class="output"></div>
+                </div>
+                <div class="solution">
+                    <div class="header">
+                        <div class="save-div">
+                            <button id="save">Save</button>
+                        </div>
+                        <div class="tabs">
+                            <ul>
+                                <li class="selected">js</li>
+                                <li>python</li>
+                                <li>c++</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="code">
+                        <div class="selected js"></div>
+                        <div class="python"></div>
+                        <div class="c++"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+        <div class="ticket"></div>
+    </main>
+    <div class="hidden">
+        <form id="form"  target="dummyframe" method="POST">
+            <input type="text" id="app_id" name="app_id">
+            <input type="text" id="month" name="month">
+            <input type="text" id="asigned_to" name="asigned_to">
+            <input type="text" id="box_index" name="box_index">
+            <button id="submit" type="submit">submit</button>
+        </form>
+    </div>
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+    <script src="./js/main.js"></script>
+</body>
+</html>
